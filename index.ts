@@ -1,9 +1,12 @@
-// Type Assignment and Type Interference
-// add a isOpen variable and assign it the boolean type
+// Array Types
+// Can you add a stayedAt property to the you Object, that contains places you 
+// have stayed as strings, then add the correct key with assigned type to the 
+// existing Object Type?
 
 const returningUserDisplay = document.querySelector('#returning-user')
 const userNameDisplay = document.querySelector('#user')
 const reviewTotalDisplay = document.querySelector('#reviews')
+let isOpen: boolean
 
 const reviews = [
     {
@@ -34,10 +37,17 @@ function showReviewTotal(value: number, reviewer: string, isLoyalty: boolean) {
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
-
-const you = {
-    userName: 'Bobby',
+const you: {
+    firstName: string;
+    lastName: string;
+    isReturning: boolean;
+    age: number;
+} = {
+    firstName: 'Bobby',
+    lastName: 'Brown',
     isReturning: true,
+    age: 35,
+    
 }
 
 
@@ -48,4 +58,5 @@ function populateUser(isReturning : boolean, userName: string ) {
     userNameDisplay.innerHTML = userName
 }
 
-populateUser(you.isReturning, you.userName)
+populateUser(you.isReturning, you.firstName)
+
