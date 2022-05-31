@@ -1,7 +1,7 @@
-// Array Types
-// Can you add a stayedAt property to the you Object, that contains places you 
-// have stayed as strings, then add the correct key with assigned type to the 
-// existing Object Type?
+// Array Types mini-challenge
+// Can you assign the correct Type to the reviews const? Please bear in mind everything
+// we have learnt about String, Boolean, Number, Object and Array Types for this.
+
 
 const returningUserDisplay = document.querySelector('#returning-user')
 const userNameDisplay = document.querySelector('#user')
@@ -42,17 +42,18 @@ const you: {
     lastName: string;
     isReturning: boolean;
     age: number;
+    stayedAt: string[]
 } = {
     firstName: 'Bobby',
     lastName: 'Brown',
     isReturning: true,
     age: 35,
-    
+    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
 
 function populateUser(isReturning : boolean, userName: string ) {
-    if (isReturning){
+    if (isReturning == true){
         returningUserDisplay.innerHTML = 'back'
     }
     userNameDisplay.innerHTML = userName
