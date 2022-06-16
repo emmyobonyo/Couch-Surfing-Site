@@ -1,24 +1,32 @@
-// Enum Types mini-challenge
-// Replace the value of loyaltyUser to a GOLD_USER, SILVER_USER or BRONZE_USER, making sure to
-// use what we learnt about Enums in the previous lesson. Make Sheia GOLD, Andrzej BRONZE 
-// and Omar SILVER.
-// 2. export the enum
-// 3. Fix the function in the utils to show Sheias star as she is a GOLD_USER.
+// Any Type
+// 1. Add a description property to Omars review, and give it a value. 
+// 2. Next try addressing what TypeScript does not like.
+// 3. Now, imagine we DON'T know what kind of review object we are going to 
+// get next.
 
 import { showReviewTotal, populateUser } from './utils'
-import { Permissions, LoyaltyUser } from './enums'
+import { Permissions , LoyaltyUser } from './enums'
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 
 let isOpen: boolean
 
 // Reviews
-const reviews : { 
-    name: string; 
-    stars: number; 
-    loyaltyUser: LoyaltyUser; 
-    date: string
-    }[] = [
+const reviews : (
+    {
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string;   
+} |
+{
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string;
+    description: string;
+}
+)[]= [
     {
         name: 'Sheia',
         stars: 5,
@@ -35,10 +43,12 @@ const reviews : {
         name: 'Omar',
         stars: 4,
         loyaltyUser: LoyaltyUser.SILVER_USER,
-        date: '27-03-2021'
+        date: '27-03-2021',
+        description: 'Great hosts, location was a bit further than said',
     },
 ]
 
+// User
 const you = {
     firstName: 'Bobby',
     lastName: 'Brown',
