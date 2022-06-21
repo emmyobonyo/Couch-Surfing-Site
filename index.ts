@@ -132,3 +132,19 @@ for (let i = 0; i < properties.length; i++) {
 let currentLocation : [string, string, number] = ['London', '11.03', 17]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
 
+// union types
+function add(firstValue : (number | string), secondValue: (number | string)) {
+    let result
+    if (typeof firstValue === 'number' && typeof secondValue === 'number') {
+        result = firstValue + secondValue
+    }
+    if (typeof firstValue === 'string' && typeof secondValue === 'string') {
+        result = firstValue + ' ' + secondValue
+    }
+    if (typeof firstValue === 'number' && typeof secondValue === 'string') {
+        console.log('cannot perform this addition')
+    }
+    if (typeof firstValue === 'string' && typeof secondValue === 'number') {
+        console.log('cannot perform this addition')
+    }
+}
